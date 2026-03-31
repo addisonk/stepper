@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { RotateCcwIcon, ArrowRightIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Stepper,
   StepperItem,
@@ -75,22 +75,16 @@ export default function Page() {
 
         {/* Interactive demo */}
         <div className="mb-8 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-medium text-muted-foreground">
-              Size:
-            </span>
-            <ToggleGroup
-              type="single"
-              value={size}
-              onValueChange={(value) => {
-                if (value) setSize(value as Size)
-              }}
-            >
-              <ToggleGroupItem value="sm">sm</ToggleGroupItem>
-              <ToggleGroupItem value="default">default</ToggleGroupItem>
-              <ToggleGroupItem value="lg">lg</ToggleGroupItem>
-            </ToggleGroup>
-          </div>
+          <Tabs
+            value={size}
+            onValueChange={(value) => setSize(value as Size)}
+          >
+            <TabsList>
+              <TabsTrigger value="sm">sm</TabsTrigger>
+              <TabsTrigger value="default">default</TabsTrigger>
+              <TabsTrigger value="lg">lg</TabsTrigger>
+            </TabsList>
+          </Tabs>
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
@@ -167,28 +161,23 @@ export default function Page() {
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
           {(["complete", "current", "upcoming"] as const).map((status) => (
-            <div key={status} className="rounded-xl border bg-card p-6">
-              <p className="mb-4 text-sm font-medium capitalize text-muted-foreground">
-                {status}
-              </p>
+            <div
+              key={status}
+              className="flex items-center gap-3 rounded-xl border bg-card p-6"
+            >
               <Stepper size="sm">
                 <StepperItem status={status}>
                   <StepperIndicator />
-                  <StepperContent>
-                    <StepperTitle>First step</StepperTitle>
-                    <StepperDescription>Step description</StepperDescription>
-                  </StepperContent>
-                  <StepperSeparator />
-                </StepperItem>
-                <StepperItem status={status}>
-                  <StepperIndicator />
-                  <StepperContent>
-                    <StepperTitle>Second step</StepperTitle>
-                    <StepperDescription>Step description</StepperDescription>
-                  </StepperContent>
-                  <StepperSeparator />
                 </StepperItem>
               </Stepper>
+              <div className="flex flex-col gap-0.5">
+                <p className="text-sm font-semibold capitalize">{status}</p>
+                <p className="text-xs text-muted-foreground">
+                  {status === "complete" && "Step has been finished"}
+                  {status === "current" && "Step is in progress"}
+                  {status === "upcoming" && "Step is not yet started"}
+                </p>
+              </div>
             </div>
           ))}
         </div>
