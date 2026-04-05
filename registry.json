@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "stepper",
+  "homepage": "https://stepper-component.vercel.app",
+  "items": [
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "A vertical stepper component with animated transitions and size variants.",
+      "dependencies": ["lucide-react"],
+      "categories": ["navigation", "progress"],
+      "files": [
+        {
+          "path": "registry/stepper/stepper.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stepper-demo",
+      "type": "registry:example",
+      "registryDependencies": ["stepper", "button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/stepper/stepper-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stepper-minimal",
+      "type": "registry:example",
+      "registryDependencies": ["stepper"],
+      "files": [
+        {
+          "path": "registry/stepper/stepper-minimal.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "stepper-states",
+      "type": "registry:example",
+      "registryDependencies": ["stepper"],
+      "files": [
+        {
+          "path": "registry/stepper/stepper-states.tsx",
+          "type": "registry:example"
+        }
+      ]
+    }
+  ]
+}
