@@ -36,10 +36,13 @@ const steps = [
   },
 ]
 
-function getStatus(index: number, currentStep: number) {
-  if (index < currentStep) return "complete" as const
-  if (index === currentStep) return "current" as const
-  return "upcoming" as const
+function getStatus(
+  index: number,
+  currentStep: number,
+): "complete" | "current" | "upcoming" {
+  if (index < currentStep) return "complete"
+  if (index === currentStep) return "current"
+  return "upcoming"
 }
 
 export default function StepperDemo() {

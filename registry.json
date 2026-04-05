@@ -9,7 +9,7 @@
       "title": "Stepper",
       "description": "A vertical stepper component with animated transitions and size variants.",
       "dependencies": ["lucide-react"],
-      "registryDependencies": [],
+      "categories": ["navigation", "progress"],
       "files": [
         {
           "path": "registry/stepper/stepper.tsx",
