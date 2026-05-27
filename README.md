@@ -2,10 +2,20 @@
 
 A composable, animated vertical stepper component built with [shadcn/ui](https://ui.shadcn.com) conventions.
 
+## Preview
+
+![Animated vertical stepper progressing through five onboarding steps](public/readme/stepper-progress.gif)
+
+![Vertical stepper showing completed, current, and upcoming onboarding steps](public/readme/stepper-overview.png)
+
+![Title-only vertical stepper with completed, current, and upcoming steps](public/readme/stepper-title-only.png)
+
+![Stepper status reference cards for complete, current, and upcoming states](public/readme/stepper-states.png)
+
 ## Installation
 
 ```bash
-npx shadcn@latest add https://stepper-component.vercel.app/r/stepper.json
+npx shadcn@latest add https://raw.githubusercontent.com/addisonk/stepper/main/public/r/stepper.json
 ```
 
 ## Usage

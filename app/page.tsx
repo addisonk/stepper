@@ -66,9 +66,9 @@ export default function Page() {
             <p className="mb-2 text-sm font-medium text-muted-foreground">
               Installation
             </p>
-            <code className="block rounded-lg border bg-muted/50 px-4 py-3 font-mono text-sm">
+            <code className="block break-all rounded-lg border bg-muted/50 px-4 py-3 font-mono text-sm">
               npx shadcn@latest add
-              https://stepper-component.vercel.app/r/stepper.json
+              https://raw.githubusercontent.com/addisonk/stepper/main/public/r/stepper.json
             </code>
           </div>
         </div>
